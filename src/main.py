@@ -15,6 +15,21 @@ class Main:
         else:
             print(f"No se encontraron vehículos del año {año}")
 
+    def buscar_por_año(self, año, condicion="igual"):
+            if condicion == "mayor":
+                resultado = [vehiculo for vehiculo in self.vehiculos if vehiculo.año > año]
+            elif condicion == "menor":
+                resultado = [vehiculo for vehiculo in self.vehiculos if vehiculo.año < año]
+            else:
+                resultado = [vehiculo for vehiculo in self.vehiculos if vehiculo.año == año]
+            
+            if resultado:
+                print(f"Vehículos encontrados con la condición '{condicion}' para el año {año}:")
+                for vehiculo in resultado:
+                    print(vehiculo)
+            else:
+                print(f"No se encontraron vehículos con la condición '{condicion}' para el año {año}.")
+        
     def imprimir_vehiculos(self):
         if not self.vehiculos:
             print("No hay vehículos registrados.")
@@ -40,4 +55,5 @@ if __name__ == "__main__":
   
     main.imprimir_vehiculos()
     main.buscar_por_año(2020)
-    main.buscar_por_año(2018)
+    main.buscar_por_año(2019, "mayor")
+    main.buscar_por_año(2020, "menor")
