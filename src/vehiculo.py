@@ -23,6 +23,7 @@ class Vehiculo:
         if tipo_combustible not in self.COMBUSTIBLES_VALIDOS:
             raise ValueError(f"Tipo de combustible inválido: {tipo_combustible}. Debe ser uno de {self.COMBUSTIBLES_VALIDOS}")
         self.tipo_combustible = tipo_combustible
+        self.año_actual = 2024
 
     def get_marca(self):
         return self.marca
@@ -62,7 +63,8 @@ class Vehiculo:
         if nuevo_combustible not in self.COMBUSTIBLES_VALIDOS:
             raise ValueError(f"Tipo de combustible inválido: {nuevo_combustible}. Debe ser uno de {self.COMBUSTIBLES_VALIDOS}")
         self.tipo_combustible = nuevo_combustible
-
+    def calcular_antiguedad(self):
+        return self.año_actual - self.año
 
 
 """
