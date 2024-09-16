@@ -13,16 +13,23 @@ class Vehiculo:
 
     COMBUSTIBLES_VALIDOS = {"Gasolina", "Diesel", "Eléctrico"}
 
-    def __init__(self, marca, modelo, año, kilometraje, estado_actual, tipo_combustible):
+    def __init__(self, marca, modelo, año, kilometraje, estado_actual, tipo_combustible, color, potencia):
         self.marca = marca
         self.modelo = modelo
         self.año = año
         self.kilometraje = kilometraje
         self.estado_actual = estado_actual
+        self.color = color
+        self.potencia = potencia
         # Validamos el tipo de combustible al inicializar
         if tipo_combustible not in self.COMBUSTIBLES_VALIDOS:
             raise ValueError(f"Tipo de combustible inválido: {tipo_combustible}. Debe ser uno de {self.COMBUSTIBLES_VALIDOS}")
         self.tipo_combustible = tipo_combustible
+
+    def __str__(self):
+        return (f"Marca: {self.marca}, Modelo: {self.modelo}, Año: {self.año}, "
+                f"Kilometraje: {self.kilometraje}, Estado: {self.estado}, "
+                f"Combustible: {self.combustible}, Color: {self.color}, Potencia: {self.potencia} HP")
 
     def get_marca(self):
         return self.marca
