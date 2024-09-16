@@ -44,15 +44,16 @@ if __name__ == "__main__":
     main = Main()
 
 
-    vehiculo1 = Vehiculo("Toyota", "Corolla", 50000, 2020, "Usado", "Gasolina")
-    vehiculo2 = Vehiculo("Ford", "Focus", 30000, 2019, "Usado", "Diésel")
-    vehiculo3 = Vehiculo("Honda", "Civic", 10000, 2020, "Nuevo", "Híbrido")
+    vehiculo1 = Vehiculo("Toyota", "Corolla", 50000, 2020, "Usado", "Gasolina", "Rojo", 132)
+    vehiculo2 = Vehiculo("Ford", "Focus", 30000, 2019, "Usado", "Diésel", "Azul", 150)
+    vehiculo3 = Vehiculo("Honda", "Civic", 10000, 2020, "Nuevo", "Híbrido", "Negro", 158)
 
     main.añadir_vehiculo(vehiculo1)
     main.añadir_vehiculo(vehiculo2)
     main.añadir_vehiculo(vehiculo3)
 
   
+    main.imprimir_vehiculos()
     main.buscar_por_año(2020)
     main.buscar_por_año(2019, "mayor")
     main.buscar_por_año(2020, "menor")

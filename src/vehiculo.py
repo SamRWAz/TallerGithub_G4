@@ -15,7 +15,6 @@ class Vehiculo:
     
      def __init__(self, marca, modelo, año, kilometraje, estado_actual, tipo_combustible, potencia,color):
 
-
         self.marca = marca
         self.modelo = modelo
         self.año = año
@@ -27,6 +26,11 @@ class Vehiculo:
             raise ValueError(f"Tipo de combustible inválido: {tipo_combustible}. Debe ser uno de {self.COMBUSTIBLES_VALIDOS}")
         self.tipo_combustible = tipo_combustible
         self.color = color
+
+    def __str__(self):
+        return (f"Marca: {self.marca}, Modelo: {self.modelo}, Año: {self.año}, "
+                f"Kilometraje: {self.kilometraje}, Estado: {self.estado}, "
+                f"Combustible: {self.combustible}, Color: {self.color}, Potencia: {self.potencia} HP")
 
     def get_marca(self):
         return self.marca
