@@ -15,6 +15,13 @@ class Main:
         else:
             print(f"No se encontraron vehículos del año {año}")
 
+    def imprimir_vehiculos(self):
+        if not self.vehiculos:
+            print("No hay vehículos registrados.")
+        else:
+            print("Vehículos registrados:")
+            for vehiculo in self.vehiculos:
+                print(vehiculo)
 
 
 if __name__ == "__main__":
