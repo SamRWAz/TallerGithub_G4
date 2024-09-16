@@ -38,6 +38,16 @@ class Main:
             for vehiculo in self.vehiculos:
                 print(vehiculo)
 
+    def buscar_por_rango_años(self, año_inicial, año_final):
+        resultado = [vehiculo for vehiculo in self.vehiculos
+                    if año_inicial <= vehiculo.año <= año_final]
+        if resultado:
+            print(f"Vehículos encontrados entre {año_inicial} y {año_final}:")
+            for vehiculo in resultado:
+                print(vehiculo)
+        else:
+            print(f"No se encontraron vehículos en el rango especificado.")
+
 
 if __name__ == "__main__":
 
